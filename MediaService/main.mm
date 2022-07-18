@@ -13,7 +13,8 @@
 #include <sys/socket.h>
 #include <errno.h>
 #include <string.h>
-#include "OHSocketStreamManager.h"
+#include "OHStreamConnection.h"
+#include "OHConnectionManager.h"
  
 using namespace std;
  
@@ -35,17 +36,19 @@ void handleSocketData(CFSocketRef s, CFSocketCallBackType type, CFDataRef addres
     CFWriteStreamRef writeStream = nil;
     CFStreamCreatePairWithSocket(kCFAllocatorDefault, fd, &readStream, &writeStream);
     
-    NSInputStream *inputStream = (__bridge NSInputStream *)readStream;
-    NSOutputStream *outputStream = (__bridge NSOutputStream *)writeStream;
-    inputStream.delegate = OHSocketStreamSharedManager;
-    outputStream.delegate = OHSocketStreamSharedManager;
+    NSInputStream *inputStream = (__bridge_transfer NSInputStream *)readStream;
+    NSOutputStream *outputStream = (__bridge_transfer NSOutputStream *)writeStream;
+    [inputStream setProperty:(id)kCFBooleanTrue forKey:(NSString *)kCFStreamPropertyShouldCloseNativeSocket];
+    [outputStream setProperty:(id)kCFBooleanTrue forKey:(NSString *)kCFStreamPropertyShouldCloseNativeSocket];
+    OHStreamConnection *connection = [OHStreamConnection new];
+    connection.inputStream = inputStream;
+    connection.outputStream = outputStream;
+    OHConnectionManager *manager = (__bridge OHConnectionManager *)info;
+    [manager addConnection:connection];
     [inputStream scheduleInRunLoop:NSRunLoop.currentRunLoop forMode:NSDefaultRunLoopMode];
     [outputStream scheduleInRunLoop:NSRunLoop.currentRunLoop forMode:NSDefaultRunLoopMode];
     [inputStream open];
     [outputStream open];
-    
-    [inputStream setProperty:(id)kCFBooleanTrue forKey:(NSString *)kCFStreamPropertyShouldCloseNativeSocket];
-    [outputStream setProperty:(id)kCFBooleanTrue forKey:(NSString *)kCFStreamPropertyShouldCloseNativeSocket];
 }
  
 void bindSocketAddress(CFSocketRef socket, NSUInteger port, IPVersion ipVersion) {
@@ -89,7 +92,7 @@ void bindSocketAddress(CFSocketRef socket, NSUInteger port, IPVersion ipVersion)
 }
  
 int main() {
-    CFSocketContext context = { 0, (__bridge void *)OHSocketStreamSharedManager, NULL, NULL, NULL };
+    CFSocketContext context = { 0, (__bridge void *)OHConnectionSharedManager, NULL, NULL, NULL };
     CFSocketCallBackType callbackType = kCFSocketAcceptCallBack;
     CFSocketRef socket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, callbackType, handleSocketData, &context);
     CFSocketRef socketV6 = CFSocketCreate(kCFAllocatorDefault, PF_INET6, SOCK_STREAM, IPPROTO_TCP, callbackType, handleSocketData, &context);

@@ -5,17 +5,21 @@
 //  Created by 梁甜 on 2022/7/17.
 //
 
-#import "OHSocketStreamManager.h"
+#import "OHStreamConnection.h"
+#import "OHConnectionManager.h"
+
+#define isValidInputStream(stream) (stream && [stream isKindOfClass:NSInputStream.class])
+#define isValidOutputStream(stream) (stream && [stream isKindOfClass:NSOutputStream.class])
 
 static CFHTTPMessageRef responseMessage;
 
-@implementation OHSocketStreamManager
+@implementation OHStreamConnection
  
 + (instancetype)sharedInstance {
-    static OHSocketStreamManager *manager = nil;
+    static OHStreamConnection *manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [OHSocketStreamManager new];
+        manager = [OHStreamConnection new];
     });
     return manager;
 }
@@ -23,26 +27,51 @@ static CFHTTPMessageRef responseMessage;
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode {
     switch (eventCode) {
         case NSStreamEventOpenCompleted:
-            NSLog(@"open completed!");
+            NSLog(@"%@ stream open completed!", [aStream isKindOfClass:NSInputStream.class] ? @"input" : @"output");
             break;
         
         case NSStreamEventHasBytesAvailable:
             // input stream
             [self _handleInputStream:aStream];
+            [self _closeStream:aStream];
             break;
         
         case NSStreamEventHasSpaceAvailable:
             // output stream
             [self _handleOutputStream:aStream];
+            [self _closeStream:aStream];
+            break;
+            
+        case kCFStreamEventEndEncountered:
+            [self _closeConnection];
+            break;
+            
+        case NSStreamEventErrorOccurred:
+            if ([aStream streamError]) {
+                [self _closeConnection];
+            }
             break;
             
         default:
             break;
     }
 }
+
+- (void)_closeStream:(NSStream *)stream {
+    stream.delegate = nil;
+    [stream close];
+    [stream removeFromRunLoop:NSRunLoop.currentRunLoop forMode:NSDefaultRunLoopMode];
+}
+
+- (void)_closeConnection {
+    [self _closeStream:self.inputStream];
+    _inputStream = nil;
+    [self _closeStream:self.outputStream];
+    _outputStream = nil;
+    [OHConnectionSharedManager removeConnection:self];
+}
  
 - (void)_handleOutputStream:(NSStream *)stream {
-#define isValidOutputStream(stream) (stream && [stream isKindOfClass:NSOutputStream.class])
     if (!isValidOutputStream(stream)) {
         return;
     }
@@ -53,11 +82,9 @@ static CFHTTPMessageRef responseMessage;
         [outputStream write:data.bytes maxLength:data.length];
         responseMessage = nil;
     }
-    [outputStream close];
 }
  
 - (void)_handleInputStream:(NSStream *)stream {
-#define isValidInputStream(stream) (stream && [stream isKindOfClass:NSInputStream.class])
     if (!isValidInputStream(stream)) {
         return;
     }
@@ -95,7 +122,18 @@ static CFHTTPMessageRef responseMessage;
         CFHTTPMessageSetBody(message, (__bridge CFDataRef)contentData);
         responseMessage = message;
     }
-    [inputStream close];
+}
+
+
+#pragma Setter
+- (void)setInputStream:(NSInputStream *)inputStream {
+    _inputStream = inputStream;
+    inputStream.delegate = self;
+}
+
+- (void)setOutputStream:(NSOutputStream *)outputStream {
+    _outputStream = outputStream;
+    outputStream.delegate = self;
 }
  
 @end

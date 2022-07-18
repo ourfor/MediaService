@@ -7,12 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
-#define OHSocketStreamSharedManager ([OHSocketStreamManager sharedInstance])
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OHSocketStreamManager : NSObject<NSStreamDelegate>
+@interface OHStreamConnection : NSObject<NSStreamDelegate>
 +(instancetype)sharedInstance;
+
+@property (nonatomic, strong) NSInputStream *inputStream;
+@property (nonatomic, strong) NSOutputStream *outputStream;
 @end
 
 NS_ASSUME_NONNULL_END

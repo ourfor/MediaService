@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88028A1F28861D7400F0BF04 /* OHConnectionManager.m */; };
 		88CC3A8128842FE500CB058C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8028842FE500CB058C /* main.mm */; };
-		88CC3A8B2884594400CB058C /* OHSocketStreamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8A2884594400CB058C /* OHSocketStreamManager.m */; };
+		88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8A2884594400CB058C /* OHStreamConnection.m */; };
 		F8C0B70256AAAA2D5BF8441E /* Pods_MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860FA2ED685750C20B70A316 /* Pods_MediaService.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,10 +29,12 @@
 		0C5FEF228BF7B1A39E4776F8 /* Pods-MediaService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaService.debug.xcconfig"; path = "Target Support Files/Pods-MediaService/Pods-MediaService.debug.xcconfig"; sourceTree = "<group>"; };
 		198A4977B21226FA55F27525 /* Pods-MediaService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaService.release.xcconfig"; path = "Target Support Files/Pods-MediaService/Pods-MediaService.release.xcconfig"; sourceTree = "<group>"; };
 		860FA2ED685750C20B70A316 /* Pods_MediaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88028A1E28861D7400F0BF04 /* OHConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHConnectionManager.h; sourceTree = "<group>"; };
+		88028A1F28861D7400F0BF04 /* OHConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHConnectionManager.m; sourceTree = "<group>"; };
 		88CC3A7D28842FE500CB058C /* MediaService */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MediaService; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CC3A8028842FE500CB058C /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		88CC3A892884594400CB058C /* OHSocketStreamManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHSocketStreamManager.h; sourceTree = "<group>"; };
-		88CC3A8A2884594400CB058C /* OHSocketStreamManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHSocketStreamManager.m; sourceTree = "<group>"; };
+		88CC3A892884594400CB058C /* OHStreamConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHStreamConnection.h; sourceTree = "<group>"; };
+		88CC3A8A2884594400CB058C /* OHStreamConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHStreamConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +79,10 @@
 		88CC3A882884591200CB058C /* helper */ = {
 			isa = PBXGroup;
 			children = (
-				88CC3A892884594400CB058C /* OHSocketStreamManager.h */,
-				88CC3A8A2884594400CB058C /* OHSocketStreamManager.m */,
+				88CC3A892884594400CB058C /* OHStreamConnection.h */,
+				88CC3A8A2884594400CB058C /* OHStreamConnection.m */,
+				88028A1E28861D7400F0BF04 /* OHConnectionManager.h */,
+				88028A1F28861D7400F0BF04 /* OHConnectionManager.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -182,8 +187,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */,
 				88CC3A8128842FE500CB058C /* main.mm in Sources */,
-				88CC3A8B2884594400CB058C /* OHSocketStreamManager.m in Sources */,
+				88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
