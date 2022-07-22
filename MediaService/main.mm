@@ -15,6 +15,8 @@
 #include <string.h>
 #include "OHStreamConnection.h"
 #include "OHConnectionManager.h"
+
+#define BUFFER_SIZE 1024
  
 using namespace std;
  
@@ -26,7 +28,6 @@ typedef enum IPVersion {
 } IPVersion;
  
 void handleSocketData(CFSocketRef s, CFSocketCallBackType type, CFDataRef address, const void *data, void *info) {
-#define BUFFER_SIZE 1024
     NSLog(@"new connect!");
     CFSocketNativeHandle fd = *(const int *)data;
     if (fd < 0) {
@@ -35,20 +36,12 @@ void handleSocketData(CFSocketRef s, CFSocketCallBackType type, CFDataRef addres
     CFReadStreamRef readStream = nil;
     CFWriteStreamRef writeStream = nil;
     CFStreamCreatePairWithSocket(kCFAllocatorDefault, fd, &readStream, &writeStream);
-    
-    NSInputStream *inputStream = (__bridge_transfer NSInputStream *)readStream;
-    NSOutputStream *outputStream = (__bridge_transfer NSOutputStream *)writeStream;
-    [inputStream setProperty:(id)kCFBooleanTrue forKey:(NSString *)kCFStreamPropertyShouldCloseNativeSocket];
-    [outputStream setProperty:(id)kCFBooleanTrue forKey:(NSString *)kCFStreamPropertyShouldCloseNativeSocket];
     OHStreamConnection *connection = [OHStreamConnection new];
-    connection.inputStream = inputStream;
-    connection.outputStream = outputStream;
+    connection.readStream = readStream;
+    connection.writeStream = writeStream;
     OHConnectionManager *manager = (__bridge OHConnectionManager *)info;
     [manager addConnection:connection];
-    [inputStream scheduleInRunLoop:NSRunLoop.currentRunLoop forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:NSRunLoop.currentRunLoop forMode:NSDefaultRunLoopMode];
-    [inputStream open];
-    [outputStream open];
+    [connection open];
 }
  
 void bindSocketAddress(CFSocketRef socket, NSUInteger port, IPVersion ipVersion) {
@@ -88,12 +81,12 @@ void bindSocketAddress(CFSocketRef socket, NSUInteger port, IPVersion ipVersion)
     CFSocketNativeHandle fd = CFSocketGetNative(socket);
     CFSocketSetSocketFlags(socket, kCFSocketCloseOnInvalidate);
     setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (void *)&reuse, sizeof(BOOL));
-    setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (void *)&reuse, sizeof(BOOL));
+    setsockopt(fd, SOL_SOCKET, SO_REUSEPORT, (void *)&reuse, sizeof(BOOL));
 }
  
 int main() {
     CFSocketContext context = { 0, (__bridge void *)OHConnectionSharedManager, NULL, NULL, NULL };
-    CFSocketCallBackType callbackType = kCFSocketAcceptCallBack;
+    CFSocketCallBackType callbackType = kCFSocketDataCallBack;
     CFSocketRef socket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, callbackType, handleSocketData, &context);
     CFSocketRef socketV6 = CFSocketCreate(kCFAllocatorDefault, PF_INET6, SOCK_STREAM, IPPROTO_TCP, callbackType, handleSocketData, &context);
     
@@ -108,4 +101,5 @@ int main() {
     
     NSLog(@"Server start *:%lu", (unsigned long)port);
     CFRunLoopRun();
+    return 0;
 }
