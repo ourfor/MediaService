@@ -7,6 +7,7 @@
 
 #import "OHInfoComponent.h"
 
+/// obtain program information
 @implementation OHInfoComponent
 
 @end

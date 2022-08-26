@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OHComponent.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OHInfoComponent : NSObject
+@interface OHInfoComponent : NSObject<OHComponent>
 
 @end
 

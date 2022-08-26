@@ -11,6 +11,7 @@
 		887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887002B528AE4397001FB811 /* OHComponentLoader.m */; };
 		88CC3A8128842FE500CB058C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8028842FE500CB058C /* main.mm */; };
 		88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8A2884594400CB058C /* OHStreamConnection.m */; };
+		88CC779F28B90F27008FB788 /* OHInfoComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC779E28B90F27008FB788 /* OHInfoComponent.m */; };
 		F8C0B70256AAAA2D5BF8441E /* Pods_MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860FA2ED685750C20B70A316 /* Pods_MediaService.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		88CC3A8028842FE500CB058C /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		88CC3A892884594400CB058C /* OHStreamConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHStreamConnection.h; sourceTree = "<group>"; };
 		88CC3A8A2884594400CB058C /* OHStreamConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHStreamConnection.m; sourceTree = "<group>"; };
+		88CC779D28B90F27008FB788 /* OHInfoComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHInfoComponent.h; sourceTree = "<group>"; };
+		88CC779E28B90F27008FB788 /* OHInfoComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHInfoComponent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,7 @@
 		88CC3A7F28842FE500CB058C /* MediaService */ = {
 			isa = PBXGroup;
 			children = (
+				88CC779C28B90EEF008FB788 /* components */,
 				887002B228AE435C001FB811 /* infrastructure */,
 				88CC3A882884591200CB058C /* helper */,
 				88CC3A8028842FE500CB058C /* main.mm */,
@@ -110,6 +114,15 @@
 				88028A1F28861D7400F0BF04 /* OHConnectionManager.m */,
 			);
 			path = helper;
+			sourceTree = "<group>";
+		};
+		88CC779C28B90EEF008FB788 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				88CC779D28B90F27008FB788 /* OHInfoComponent.h */,
+				88CC779E28B90F27008FB788 /* OHInfoComponent.m */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		B99309ADA87E5FCE4CA2CE53 /* Pods */ = {
@@ -214,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */,
+				88CC779F28B90F27008FB788 /* OHInfoComponent.m in Sources */,
 				88CC3A8128842FE500CB058C /* main.mm in Sources */,
 				88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */,
 				887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */,

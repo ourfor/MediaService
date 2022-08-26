@@ -160,7 +160,8 @@ void WriteStreamClientCallBack(CFWriteStreamRef _Null_unspecified stream, CFStre
         NSDictionary *content = @{
             @"message": @"Hello World"
         };
-        NSData *contentData = [NSJSONSerialization dataWithJSONObject:content options:NSJSONWritingPrettyPrinted error:nil];
+        NSMutableData *contentData = [[NSJSONSerialization dataWithJSONObject:content options:NSJSONWritingPrettyPrinted error:nil] mutableCopy];
+        [contentData appendData:[@"\n\n" dataUsingEncoding:NSUTF8StringEncoding]];
         
         CFHTTPMessageRef message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, 200, NULL, kCFHTTPVersion2_0);
         CFHTTPMessageSetHeaderFieldValue(message, (__bridge CFStringRef)@"Content-Type", (__bridge CFStringRef)@"application/json");
