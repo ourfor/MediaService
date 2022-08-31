@@ -13,6 +13,15 @@
 
 @implementation OHBeanContainer
 
++ (instancetype)sharedInstance {
+    static OHBeanContainer *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [OHBeanContainer new];
+    });
+    return instance;
+}
+
 - (void)setBean:(Protocol *)protocol value:(id)value {
     if (!protocol || !value) {
         return;
