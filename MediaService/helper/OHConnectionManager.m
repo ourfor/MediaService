@@ -6,6 +6,7 @@
 //
 
 #import "OHConnectionManager.h"
+#import "OHComponentLoader.h"
 
 
 @implementation OHConnectionManager

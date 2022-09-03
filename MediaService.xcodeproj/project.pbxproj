@@ -35,6 +35,7 @@
 		88028A1E28861D7400F0BF04 /* OHConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHConnectionManager.h; sourceTree = "<group>"; };
 		88028A1F28861D7400F0BF04 /* OHConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHConnectionManager.m; sourceTree = "<group>"; };
 		8857562128C394580083B065 /* OHComponentSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentSource.h; sourceTree = "<group>"; };
+		8857562328C395D90083B065 /* OHMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHMacros.h; sourceTree = "<group>"; };
 		887002B428AE4397001FB811 /* OHComponentLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentLoader.h; sourceTree = "<group>"; };
 		887002B528AE4397001FB811 /* OHComponentLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHComponentLoader.m; sourceTree = "<group>"; };
 		887002B728AE43B6001FB811 /* OHComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponent.h; sourceTree = "<group>"; };
@@ -70,9 +71,18 @@
 			path = info;
 			sourceTree = "<group>";
 		};
+		8857562228C395B10083B065 /* macros */ = {
+			isa = PBXGroup;
+			children = (
+				8857562328C395D90083B065 /* OHMacros.h */,
+			);
+			path = macros;
+			sourceTree = "<group>";
+		};
 		887002B228AE435C001FB811 /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				8857562228C395B10083B065 /* macros */,
 				888A1A3A28BA58F800C906F8 /* bean */,
 				887002B328AE436F001FB811 /* component */,
 			);

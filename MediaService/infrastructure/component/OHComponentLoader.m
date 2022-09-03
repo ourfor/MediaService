@@ -7,6 +7,7 @@
 
 #import "OHComponentLoader.h"
 #import "OHComponent.h"
+#import "OHMacros.h"
 
 @interface OHComponentLoader ()
 @property (nonatomic, copy) NSMutableArray<id<OHComponent>> *components;
@@ -31,7 +32,9 @@
             continue;
         }
         
+        OHSuppressPerformSelectorLeakWarningBegin
         [component performSelector:lifeCycle withObject:context];
+        OHSuppressPerformSelectorLeakWarningEnd
     }
 }
 
