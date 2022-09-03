@@ -34,6 +34,7 @@
 		860FA2ED685750C20B70A316 /* Pods_MediaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88028A1E28861D7400F0BF04 /* OHConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHConnectionManager.h; sourceTree = "<group>"; };
 		88028A1F28861D7400F0BF04 /* OHConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHConnectionManager.m; sourceTree = "<group>"; };
+		8857562128C394580083B065 /* OHComponentSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentSource.h; sourceTree = "<group>"; };
 		887002B428AE4397001FB811 /* OHComponentLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentLoader.h; sourceTree = "<group>"; };
 		887002B528AE4397001FB811 /* OHComponentLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHComponentLoader.m; sourceTree = "<group>"; };
 		887002B728AE43B6001FB811 /* OHComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponent.h; sourceTree = "<group>"; };
@@ -60,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8857561D28C3940D0083B065 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				88CC779D28B90F27008FB788 /* OHInfoComponent.h */,
+				88CC779E28B90F27008FB788 /* OHInfoComponent.m */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
 		887002B228AE435C001FB811 /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 				887002B528AE4397001FB811 /* OHComponentLoader.m */,
 				887002B728AE43B6001FB811 /* OHComponent.h */,
 				887002B928AE43E8001FB811 /* OHComponentContext.h */,
+				8857562128C394580083B065 /* OHComponentSource.h */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -132,8 +143,7 @@
 		88CC779C28B90EEF008FB788 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				88CC779D28B90F27008FB788 /* OHInfoComponent.h */,
-				88CC779E28B90F27008FB788 /* OHInfoComponent.m */,
+				8857561D28C3940D0083B065 /* info */,
 			);
 			path = components;
 			sourceTree = "<group>";
