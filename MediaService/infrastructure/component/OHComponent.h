@@ -21,8 +21,9 @@ typedef NS_ENUM(NSUInteger, OHComponentPhase) {
 };
 
 @protocol OHComponent <NSObject>
-+ (void)component:(id<OHComponentContext>)context;
++ (instancetype)component:(id<OHComponentContext>)context;
 
+@optional
 - (void)componentWillMount:(id<OHComponentContext>)context;
 - (void)componentDidMount:(id<OHComponentContext>)context;
 - (void)componentWillAppear:(id<OHComponentContext>)context;

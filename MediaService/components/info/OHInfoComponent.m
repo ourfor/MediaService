@@ -10,4 +10,8 @@
 /// obtain program information
 @implementation OHInfoComponent
 
++ (instancetype)component:(id<OHComponentContext>)context {
+    return [OHInfoComponent new];
+}
+
 @end
