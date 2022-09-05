@@ -12,13 +12,26 @@
 #import <Foundation/Foundation.h>
 
 /// Binary Tree
-typedef struct BinaryTree {
+typedef struct OHBinaryTree {
     /// left child
-    struct BinaryTree *left;
+    struct OHBinaryTree *left;
     /// right child;
-    struct BinaryTree *right;
+    struct OHBinaryTree *right;
     /// value
     id value;
-} BinaryTree;
+} OHBinaryTree, OHBinaryTreeNode;
+
+
+typedef NS_ENUM(NSUInteger, OHBinaryTreeNodeCompareResult) {
+    OHBinaryTreeNodeEqual,
+    OHBinaryTreeNodeGreat,
+    OHBinaryTreeNodeLess
+};
+
+typedef void (^OHBinaryTreeNodeVisit)(OHBinaryTree *);
+typedef OHBinaryTreeNodeCompareResult (^OHBinaryTreeNodeCompare)(OHBinaryTreeNode *front, OHBinaryTreeNode *rear);
+/// Binary Tree PreOrder
+void OHBinaryTreePreOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit);
+void OHBinarySearchTreeInsert(OHBinaryTree *tree, OHBinaryTreeNodeCompare compare, id value);
 
 #endif /* BinaryTree_h */
