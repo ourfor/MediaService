@@ -10,6 +10,7 @@
 		88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88028A1F28861D7400F0BF04 /* OHConnectionManager.m */; };
 		887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887002B528AE4397001FB811 /* OHComponentLoader.m */; };
 		888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 888A1A3C28BA595100C906F8 /* OHBeanContainer.m */; };
+		888E007F28C791CC00B6974D /* OHStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E007E28C791CC00B6974D /* OHStack.m */; };
 		88981E3428C63C72006FF4C7 /* BinaryTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 88981E3328C63C72006FF4C7 /* BinaryTree.c */; };
 		88CC3A8128842FE500CB058C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8028842FE500CB058C /* main.mm */; };
 		88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8A2884594400CB058C /* OHStreamConnection.m */; };
@@ -43,6 +44,8 @@
 		887002B928AE43E8001FB811 /* OHComponentContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentContext.h; sourceTree = "<group>"; };
 		888A1A3B28BA595100C906F8 /* OHBeanContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHBeanContainer.h; sourceTree = "<group>"; };
 		888A1A3C28BA595100C906F8 /* OHBeanContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHBeanContainer.m; sourceTree = "<group>"; };
+		888E007D28C791CC00B6974D /* OHStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHStack.h; sourceTree = "<group>"; };
+		888E007E28C791CC00B6974D /* OHStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHStack.m; sourceTree = "<group>"; };
 		88981E3228C63C72006FF4C7 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
 		88981E3328C63C72006FF4C7 /* BinaryTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BinaryTree.c; sourceTree = "<group>"; };
 		88CC3A7D28842FE500CB058C /* MediaService */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MediaService; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,9 +117,19 @@
 			path = bean;
 			sourceTree = "<group>";
 		};
+		888E007C28C791B100B6974D /* stack */ = {
+			isa = PBXGroup;
+			children = (
+				888E007D28C791CC00B6974D /* OHStack.h */,
+				888E007E28C791CC00B6974D /* OHStack.m */,
+			);
+			path = stack;
+			sourceTree = "<group>";
+		};
 		88981E3028C63C01006FF4C7 /* algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				888E007C28C791B100B6974D /* stack */,
 				88981E3128C63C45006FF4C7 /* tree */,
 			);
 			path = algorithm;
@@ -287,6 +300,7 @@
 				888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */,
 				887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */,
 				88981E3428C63C72006FF4C7 /* BinaryTree.c in Sources */,
+				888E007F28C791CC00B6974D /* OHStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
