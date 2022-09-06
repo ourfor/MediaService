@@ -132,7 +132,10 @@
 		88981E3028C63C01006FF4C7 /* algorithm */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				88F9972B28C8DEE20020C6CB /* queue */,
+=======
+>>>>>>> c75141f (✨ add stack)
 				888E007C28C791B100B6974D /* stack */,
 				88981E3128C63C45006FF4C7 /* tree */,
 			);
