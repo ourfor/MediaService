@@ -15,6 +15,7 @@
 		88CC3A8128842FE500CB058C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8028842FE500CB058C /* main.mm */; };
 		88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8A2884594400CB058C /* OHStreamConnection.m */; };
 		88CC779F28B90F27008FB788 /* OHInfoComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC779E28B90F27008FB788 /* OHInfoComponent.m */; };
+		88F9972E28C8DEEC0020C6CB /* OHQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F9972D28C8DEEC0020C6CB /* OHQueue.m */; };
 		F8C0B70256AAAA2D5BF8441E /* Pods_MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860FA2ED685750C20B70A316 /* Pods_MediaService.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		88CC3A8A2884594400CB058C /* OHStreamConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHStreamConnection.m; sourceTree = "<group>"; };
 		88CC779D28B90F27008FB788 /* OHInfoComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHInfoComponent.h; sourceTree = "<group>"; };
 		88CC779E28B90F27008FB788 /* OHInfoComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHInfoComponent.m; sourceTree = "<group>"; };
+		88F9972C28C8DEEC0020C6CB /* OHQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHQueue.h; sourceTree = "<group>"; };
+		88F9972D28C8DEEC0020C6CB /* OHQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 		88981E3028C63C01006FF4C7 /* algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				88F9972B28C8DEE20020C6CB /* queue */,
 				888E007C28C791B100B6974D /* stack */,
 				88981E3128C63C45006FF4C7 /* tree */,
 			);
@@ -190,6 +194,15 @@
 				8857561D28C3940D0083B065 /* info */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		88F9972B28C8DEE20020C6CB /* queue */ = {
+			isa = PBXGroup;
+			children = (
+				88F9972C28C8DEEC0020C6CB /* OHQueue.h */,
+				88F9972D28C8DEEC0020C6CB /* OHQueue.m */,
+			);
+			path = queue;
 			sourceTree = "<group>";
 		};
 		B99309ADA87E5FCE4CA2CE53 /* Pods */ = {
@@ -296,6 +309,7 @@
 				88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */,
 				88CC779F28B90F27008FB788 /* OHInfoComponent.m in Sources */,
 				88CC3A8128842FE500CB058C /* main.mm in Sources */,
+				88F9972E28C8DEEC0020C6CB /* OHQueue.m in Sources */,
 				88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */,
 				888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */,
 				887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */,
