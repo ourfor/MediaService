@@ -10,9 +10,25 @@
 
 void OHBinaryTreePreOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit) {
     if (tree) {
-        OHBinaryTreePreOrder(tree->left, visit);
         visit(tree);
+        OHBinaryTreePreOrder(tree->left, visit);
         OHBinaryTreePreOrder(tree->right, visit);
+    }
+}
+
+void OHBinaryTreeInOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit) {
+    if (tree) {
+        OHBinaryTreeInOrder(tree->left, visit);
+        visit(tree);
+        OHBinaryTreeInOrder(tree->right, visit);
+    }
+}
+
+void OHBinaryTreePostOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit) {
+    if (tree) {
+        OHBinaryTreePostOrder(tree->left, visit);
+        OHBinaryTreePostOrder(tree->right, visit);
+        visit(tree);
     }
 }
 
