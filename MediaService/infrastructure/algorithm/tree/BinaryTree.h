@@ -21,6 +21,19 @@ typedef struct OHBinaryTree {
     id value;
 } OHBinaryTree, OHBinaryTreeNode;
 
+typedef NS_ENUM(NSUInteger, OHBinaryThreadTag) {
+    OHBinaryThreadLink,
+    OHBinaryThreadThread
+};
+
+typedef struct OHBinaryThreadTree {
+    struct OHBinaryThreadTree *left;
+    struct OHBinaryThreadTree *right;
+    id value;
+    OHBinaryThreadTag leftTag;
+    OHBinaryThreadTag rightTag;
+} OHBinaryThreadTree;
+
 
 typedef NS_ENUM(NSUInteger, OHBinaryTreeNodeCompareResult) {
     OHBinaryTreeNodeEqual,
