@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88028A1F28861D7400F0BF04 /* OHConnectionManager.m */; };
+		8867FF2C28CB7D9D00AE40A2 /* OHQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8867FF2A28CB7D9D00AE40A2 /* OHQueue.m */; };
+		8867FF3028CB7DAA00AE40A2 /* OHStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8867FF2E28CB7DAA00AE40A2 /* OHStack.m */; };
 		887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887002B528AE4397001FB811 /* OHComponentLoader.m */; };
 		888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 888A1A3C28BA595100C906F8 /* OHBeanContainer.m */; };
 		88981E3428C63C72006FF4C7 /* BinaryTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 88981E3328C63C72006FF4C7 /* BinaryTree.c */; };
@@ -37,6 +39,10 @@
 		88028A1F28861D7400F0BF04 /* OHConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHConnectionManager.m; sourceTree = "<group>"; };
 		8857562128C394580083B065 /* OHComponentSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentSource.h; sourceTree = "<group>"; };
 		8857562328C395D90083B065 /* OHMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHMacros.h; sourceTree = "<group>"; };
+		8867FF2A28CB7D9D00AE40A2 /* OHQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHQueue.m; sourceTree = "<group>"; };
+		8867FF2B28CB7D9D00AE40A2 /* OHQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHQueue.h; sourceTree = "<group>"; };
+		8867FF2E28CB7DAA00AE40A2 /* OHStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHStack.m; sourceTree = "<group>"; };
+		8867FF2F28CB7DAA00AE40A2 /* OHStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHStack.h; sourceTree = "<group>"; };
 		887002B428AE4397001FB811 /* OHComponentLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentLoader.h; sourceTree = "<group>"; };
 		887002B528AE4397001FB811 /* OHComponentLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHComponentLoader.m; sourceTree = "<group>"; };
 		887002B728AE43B6001FB811 /* OHComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponent.h; sourceTree = "<group>"; };
@@ -82,6 +88,24 @@
 			path = macros;
 			sourceTree = "<group>";
 		};
+		8867FF2928CB7D9D00AE40A2 /* queue */ = {
+			isa = PBXGroup;
+			children = (
+				8867FF2A28CB7D9D00AE40A2 /* OHQueue.m */,
+				8867FF2B28CB7D9D00AE40A2 /* OHQueue.h */,
+			);
+			path = queue;
+			sourceTree = "<group>";
+		};
+		8867FF2D28CB7DAA00AE40A2 /* stack */ = {
+			isa = PBXGroup;
+			children = (
+				8867FF2E28CB7DAA00AE40A2 /* OHStack.m */,
+				8867FF2F28CB7DAA00AE40A2 /* OHStack.h */,
+			);
+			path = stack;
+			sourceTree = "<group>";
+		};
 		887002B228AE435C001FB811 /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +141,8 @@
 		88981E3028C63C01006FF4C7 /* algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				8867FF2D28CB7DAA00AE40A2 /* stack */,
+				8867FF2928CB7D9D00AE40A2 /* queue */,
 				88981E3128C63C45006FF4C7 /* tree */,
 			);
 			path = algorithm;
@@ -280,8 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8867FF2C28CB7D9D00AE40A2 /* OHQueue.m in Sources */,
 				88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */,
 				88CC779F28B90F27008FB788 /* OHInfoComponent.m in Sources */,
+				8867FF3028CB7DAA00AE40A2 /* OHStack.m in Sources */,
 				88CC3A8128842FE500CB058C /* main.mm in Sources */,
 				88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */,
 				888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */,

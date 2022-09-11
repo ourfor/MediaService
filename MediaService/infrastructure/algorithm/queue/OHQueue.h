@@ -21,4 +21,8 @@ void OHQueueInit(OHQueue *queue);
 /// return given queue elements size
 int OHQueueLength(OHQueue *queue);
 
+void OHEnQueue(OHQueue *queue, id element);
+
+id OHDeQueue(OHQueue *queue);
+
 #endif /* OHQueue_h */
