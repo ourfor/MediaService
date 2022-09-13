@@ -12,7 +12,7 @@
 		8867FF3028CB7DAA00AE40A2 /* OHStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8867FF2E28CB7DAA00AE40A2 /* OHStack.m */; };
 		887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887002B528AE4397001FB811 /* OHComponentLoader.m */; };
 		888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 888A1A3C28BA595100C906F8 /* OHBeanContainer.m */; };
-		88981E3428C63C72006FF4C7 /* BinaryTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 88981E3328C63C72006FF4C7 /* BinaryTree.c */; };
+		88981E3428C63C72006FF4C7 /* OHBinaryTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 88981E3328C63C72006FF4C7 /* OHBinaryTree.c */; };
 		88CC3A8128842FE500CB058C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8028842FE500CB058C /* main.mm */; };
 		88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8A2884594400CB058C /* OHStreamConnection.m */; };
 		88CC779F28B90F27008FB788 /* OHInfoComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC779E28B90F27008FB788 /* OHInfoComponent.m */; };
@@ -49,8 +49,8 @@
 		887002B928AE43E8001FB811 /* OHComponentContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentContext.h; sourceTree = "<group>"; };
 		888A1A3B28BA595100C906F8 /* OHBeanContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHBeanContainer.h; sourceTree = "<group>"; };
 		888A1A3C28BA595100C906F8 /* OHBeanContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHBeanContainer.m; sourceTree = "<group>"; };
-		88981E3228C63C72006FF4C7 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
-		88981E3328C63C72006FF4C7 /* BinaryTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BinaryTree.c; sourceTree = "<group>"; };
+		88981E3228C63C72006FF4C7 /* OHBinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHBinaryTree.h; sourceTree = "<group>"; };
+		88981E3328C63C72006FF4C7 /* OHBinaryTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = OHBinaryTree.c; sourceTree = "<group>"; };
 		88CC3A7D28842FE500CB058C /* MediaService */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MediaService; sourceTree = BUILT_PRODUCTS_DIR; };
 		88CC3A8028842FE500CB058C /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		88CC3A892884594400CB058C /* OHStreamConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHStreamConnection.h; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 		8867FF2D28CB7DAA00AE40A2 /* stack */ = {
 			isa = PBXGroup;
 			children = (
-				8867FF2E28CB7DAA00AE40A2 /* OHStack.m */,
 				8867FF2F28CB7DAA00AE40A2 /* OHStack.h */,
+				8867FF2E28CB7DAA00AE40A2 /* OHStack.m */,
 			);
 			path = stack;
 			sourceTree = "<group>";
@@ -151,8 +151,8 @@
 		88981E3128C63C45006FF4C7 /* tree */ = {
 			isa = PBXGroup;
 			children = (
-				88981E3228C63C72006FF4C7 /* BinaryTree.h */,
-				88981E3328C63C72006FF4C7 /* BinaryTree.c */,
+				88981E3228C63C72006FF4C7 /* OHBinaryTree.h */,
+				88981E3328C63C72006FF4C7 /* OHBinaryTree.c */,
 			);
 			path = tree;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 				88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */,
 				888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */,
 				887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */,
-				88981E3428C63C72006FF4C7 /* BinaryTree.c in Sources */,
+				88981E3428C63C72006FF4C7 /* OHBinaryTree.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
