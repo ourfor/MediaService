@@ -10,6 +10,7 @@
 
 #import <stdio.h>
 #import <Foundation/Foundation.h>
+#import "OHStack.h"
 
 /// Binary Tree
 typedef struct OHBinaryTree {
@@ -47,6 +48,7 @@ typedef OHBinaryTreeNodeCompareResult (^OHBinaryTreeNodeCompare)(OHBinaryTreeNod
 void OHBinaryTreePreOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit);
 void OHBinaryTreeInOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit);
 void OHBinaryTreePostOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit);
+void OHBinaryTreePostOrderWithoutRecur(OHBinaryTree *tree, OHBinaryTreeNodeVisit);
 void OHBinarySearchTreeInsert(OHBinaryTree *tree, OHBinaryTreeNodeCompare compare, id value);
 
 #endif /* BinaryTree_h */

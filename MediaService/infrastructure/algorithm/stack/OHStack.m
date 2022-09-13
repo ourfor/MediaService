@@ -14,7 +14,7 @@ void OHStackInit(OHStack *stack) {
 }
 
 /// return the top element of given stack
-id OHStackTopElement(OHStack *stack) {
+id OHStackTop(OHStack *stack) {
     if (stack->elements && [stack->elements isKindOfClass:NSArray.class]) {
         NSArray *array = (NSArray *)stack->elements;
         return array.lastObject;
@@ -23,7 +23,7 @@ id OHStackTopElement(OHStack *stack) {
 }
 
 /// push the given element to stack
-void OHStackPushElement(OHStack *stack, id element) {
+void OHStackPush(OHStack *stack, id element) {
     if (stack->elements && [stack->elements isKindOfClass:NSMutableArray.class]) {
         NSMutableArray *array = (NSMutableArray *)stack->elements;
         if (element) {
@@ -33,7 +33,7 @@ void OHStackPushElement(OHStack *stack, id element) {
     }
 }
 /// return the top element of stack and remove it from stack
-id OHStackPopElement(OHStack *stack) {
+id OHStackPop(OHStack *stack) {
     if (stack->elements && [stack->elements isKindOfClass:NSMutableArray.class]) {
         NSMutableArray *array = (NSMutableArray *)stack->elements;
         if (array.count) {
@@ -49,4 +49,12 @@ id OHStackPopElement(OHStack *stack) {
 /// return element size of given stack
 int OHStackLength(OHStack *stack) {
     return stack->length;
+}
+
+BOOL OHStackIsEmpty(OHStack *stack) {
+    if (stack) {
+        return stack->length != 0;
+    }
+    
+    return NO;
 }

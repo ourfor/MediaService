@@ -5,7 +5,7 @@
 //  Created by 梁甜 on 2022/9/5.
 //
 
-#include "BinaryTree.h"
+#include "OHBinaryTree.h"
 
 
 void OHBinaryTreePreOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit) {
@@ -29,6 +29,30 @@ void OHBinaryTreePostOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit) {
         OHBinaryTreePostOrder(tree->left, visit);
         OHBinaryTreePostOrder(tree->right, visit);
         visit(tree);
+    }
+}
+
+void OHBinaryTreePostOrderWithoutRecur(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit) {
+    OHStack stack;
+    OHStackInit(&stack);
+    
+    OHBinaryTreeNode *curr = tree;
+    OHBinaryTreeNode *prev = nil;
+    while (curr || !OHStackIsEmpty(&stack)) {
+        if (curr) {
+            OHStackPush(&stack, (id)curr);
+            curr = curr->left;
+        } else {
+            curr = (OHBinaryTreeNode *)OHStackTopElement(&stack);
+            if (curr->right && curr->right != prev) {
+                curr = curr->right;
+            } else {
+                curr = (OHBinaryTreeNode *)OHStackPop(&stack);
+                visit(curr);
+                prev = curr;
+                curr = nil;
+            }
+        }
     }
 }
 

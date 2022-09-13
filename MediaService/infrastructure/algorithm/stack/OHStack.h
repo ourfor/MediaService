@@ -19,11 +19,14 @@ typedef struct OHStack {
 /// init stack
 void OHStackInit(OHStack *stack);
 /// return the top element of given stack
-id OHStackTopElement(OHStack *stack);
+id OHStackTop(OHStack *stack);
 /// push the given element to stack
-void OHStackPushElement(OHStack *stack, id element);
+void OHStackPush(OHStack *stack, id element);
 /// return the top element of stack and remove it from stack
-id OHStackPopElement(OHStack *stack);
+id OHStackPop(OHStack *stack);
+
+/// check if stack is empty or not
+BOOL OHStackIsEmpty(OHStack *stack);
 
 /// return element size of given stack
 int OHStackLength(OHStack *stack);
