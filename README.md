@@ -1,4 +1,4 @@
-## MediaServer
+## Spring
 A lighting http server written by objective c
 
 ## Feature
@@ -6,6 +6,7 @@ A lighting http server written by objective c
 - dynamic load config file
 - dynamic mount moudule
 - cross platform support
+- inversion of control
 
 
 ## Credit
