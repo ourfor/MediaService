@@ -25,4 +25,6 @@ void OHEnQueue(OHQueue *queue, id element);
 
 id OHDeQueue(OHQueue *queue);
 
+BOOL OHIsEmptyQueue(OHQueue *queue);
+
 #endif /* OHQueue_h */

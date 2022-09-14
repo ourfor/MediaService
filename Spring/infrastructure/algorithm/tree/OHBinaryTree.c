@@ -43,7 +43,7 @@ void OHBinaryTreePostOrderWithoutRecur(OHBinaryTree *tree, OHBinaryTreeNodeVisit
             OHStackPush(&stack, (id)curr);
             curr = curr->left;
         } else {
-            curr = (OHBinaryTreeNode *)OHStackTopElement(&stack);
+            curr = (OHBinaryTreeNode *)OHStackTop(&stack);
             if (curr->right && curr->right != prev) {
                 curr = curr->right;
             } else {
@@ -53,6 +53,19 @@ void OHBinaryTreePostOrderWithoutRecur(OHBinaryTree *tree, OHBinaryTreeNodeVisit
                 curr = nil;
             }
         }
+    }
+}
+
+void OHBinaryTreeLevelOrder(OHBinaryTree *tree, OHBinaryTreeNodeVisit visit) {
+    OHQueue queue;
+    OHQueueInit(&queue);
+    OHEnQueue(&queue, (id)tree);
+    OHBinaryTreeNode *node = nil;
+    while (!OHIsEmptyQueue(&queue)) {
+        node = (OHBinaryTreeNode *)OHDeQueue(&queue);
+        visit(node);
+        if (node->left) OHEnQueue(&queue, (id)node->left);
+        if (node->right) OHEnQueue(&queue, (id)node->right);
     }
 }
 

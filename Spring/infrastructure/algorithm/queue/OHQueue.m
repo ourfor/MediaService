@@ -49,3 +49,11 @@ id OHDeQueue(OHQueue *queue) {
     
     return nil;
 }
+
+BOOL OHIsEmptyQueue(OHQueue *queue) {
+    if (queue) {
+        return queue->length == 0;
+    }
+    
+    return YES;
+}
