@@ -12,6 +12,7 @@
 		8867FF3028CB7DAA00AE40A2 /* OHStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8867FF2E28CB7DAA00AE40A2 /* OHStack.m */; };
 		887002B628AE4397001FB811 /* OHComponentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887002B528AE4397001FB811 /* OHComponentLoader.m */; };
 		888A1A3D28BA595100C906F8 /* OHBeanContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 888A1A3C28BA595100C906F8 /* OHBeanContainer.m */; };
+		8897AE6A28F8456600E82BEC /* OHSemaphore.c in Sources */ = {isa = PBXBuildFile; fileRef = 8897AE6928F8456600E82BEC /* OHSemaphore.c */; };
 		88981E3428C63C72006FF4C7 /* OHBinaryTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 88981E3328C63C72006FF4C7 /* OHBinaryTree.c */; };
 		88CC3A8128842FE500CB058C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8028842FE500CB058C /* main.mm */; };
 		88CC3A8B2884594400CB058C /* OHStreamConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC3A8A2884594400CB058C /* OHStreamConnection.m */; };
@@ -49,6 +50,8 @@
 		887002B928AE43E8001FB811 /* OHComponentContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHComponentContext.h; sourceTree = "<group>"; };
 		888A1A3B28BA595100C906F8 /* OHBeanContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHBeanContainer.h; sourceTree = "<group>"; };
 		888A1A3C28BA595100C906F8 /* OHBeanContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHBeanContainer.m; sourceTree = "<group>"; };
+		8897AE6828F8456600E82BEC /* OHSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHSemaphore.h; sourceTree = "<group>"; };
+		8897AE6928F8456600E82BEC /* OHSemaphore.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = OHSemaphore.c; sourceTree = "<group>"; };
 		88981E3228C63C72006FF4C7 /* OHBinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHBinaryTree.h; sourceTree = "<group>"; };
 		88981E3328C63C72006FF4C7 /* OHBinaryTree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = OHBinaryTree.c; sourceTree = "<group>"; };
 		88CC3A7D28842FE500CB058C /* Spring */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spring; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,9 +141,19 @@
 			path = bean;
 			sourceTree = "<group>";
 		};
+		8897AE6728F8454400E82BEC /* semaphore */ = {
+			isa = PBXGroup;
+			children = (
+				8897AE6828F8456600E82BEC /* OHSemaphore.h */,
+				8897AE6928F8456600E82BEC /* OHSemaphore.c */,
+			);
+			path = semaphore;
+			sourceTree = "<group>";
+		};
 		88981E3028C63C01006FF4C7 /* algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				8897AE6728F8454400E82BEC /* semaphore */,
 				8867FF2D28CB7DAA00AE40A2 /* stack */,
 				8867FF2928CB7D9D00AE40A2 /* queue */,
 				88981E3128C63C45006FF4C7 /* tree */,
@@ -307,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8867FF2C28CB7D9D00AE40A2 /* OHQueue.m in Sources */,
+				8897AE6A28F8456600E82BEC /* OHSemaphore.c in Sources */,
 				88028A2028861D7400F0BF04 /* OHConnectionManager.m in Sources */,
 				88CC779F28B90F27008FB788 /* OHInfoComponent.m in Sources */,
 				8867FF3028CB7DAA00AE40A2 /* OHStack.m in Sources */,
